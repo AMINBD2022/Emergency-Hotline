@@ -12,6 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
+    <!-- Header Section start  -->
+
     <header class="px-15 py-6">
         <nav class=" flex flex-col md:flex-row gap-3 md:justify-between md:items-center">
             <div class="box-left flex gap-3 items-center">
@@ -20,16 +22,21 @@
             </div>
             <div class="box-right flex flex-col md:flex-row gap-5">
                 <button class="flex justify-center items-center bg-[#41ff6b1a] py-4 px-14 rounded-[40px]"> <span id="heart-number-count" class="font-bold mr-2 block">0</span><img src="./Images/heart.png" alt="" class="max-w-[30px] h-auto"></button>
-                <button class="flex justify-center items-center bg-[#41ff6b1a] py-4 px-14 rounded-[40px]"> <span class="font-bold mr-2 block">100</span><img src="./Images/coin.png" alt="" class="max-w-[22px] h-auto"></button>
+                <button class="flex justify-center items-center bg-[#41ff6b1a] py-4 px-14 rounded-[40px]"> <span id="available-coins" class="font-bold mr-2 block">100</span><img src="./Images/coin.png" alt="" class="max-w-[22px] h-auto"></button>
                 <button class="flex justify-center items-center bg-[#00A63E] py-4 px-14 rounded-[40px] font-bold text-white"> <span class="font-bold mr-2 block">3</span> Copy </button>
             </div>
         </nav>
     </header>
+
+    <!-- hero section start  -->
+
     <div class="px-15 py-5  bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] text-white text-center">
         <img src="./Images/logo-dark.png" alt="" class="max-w-[92px] m-auto">
         <h1 class="font-bold text-[40px]">Emergency Service Directory</h1>
         <p class="font-semibold text-xl">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
     </div>
+
+    <!-- Services section start  -->
     <div class="services-section max-w-[1800px] m-auto mb-12 mt-10 px-4">
         <div class="flex flex-col md:flex-row gap-6 md:gap-8 justify-center">
             <div class="box-left grid md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-5 md:gap-8">
@@ -38,7 +45,7 @@
                         <img src="./Images/emergency.png" alt="" class="w-[60px] bg-[#FFE3E2] rounded-2xl p-3.5">
                         <i class="fa-regular fa-heart"></i>
                     </div>
-                    <h3 class="font-bold text-2xl">National Emergency Number</h3>
+                    <h3 class="font-bold text-2xl national">National Emergency Number</h3>
                     <h4 class="sub-title font-semibold text-lg text-[#5C5C5C] mb-4">National Emergency</h4>
                     <div class="service-box mb-6">
                         <h2 id="call-number" class="number font-bold text-3xl mb-2">999</h2>
@@ -46,7 +53,7 @@
                     </div>
                     <div class="btn-box flex gap-4">
                         <a href="#" class="w-full block shadow-md p-4 text-xl rounded-xl text-center border-1 border-gray-200 text-[#5C5C5C]"><i class="fa-solid fa-copy"></i> Copy</a>
-                        <a href="#" id="" class=" call-btn w-full block bg-[#00A63E] shadow-md text-white p-4 text-xl rounded-xl text-center border-1 border-gray-200"><i class="fa-solid fa-phone"></i> Call</a>
+                        <a href="#" id="" class="call-btn w-full block bg-[#00A63E] shadow-md text-white p-4 text-xl rounded-xl text-center border-1 border-gray-200"><i class="fa-solid fa-phone"></i> Call</a>
                     </div>
                </div>
                <div class="content-box p-10 bg-white shadow-sm rounded-xl w-full max-w-[430px]">
@@ -54,7 +61,7 @@
                         <img src="./Images/emergency.png" alt="" class="w-[60px] bg-[#FFE3E2] rounded-2xl p-3.5">
                         <i class="fa-regular fa-heart"></i>
                     </div>
-                    <h3 class="font-bold text-2xl">National Emergency Number</h3>
+                    <h3 class="font-bold text-2xl national">Police Helpline Number</h3>
                     <h4 class="sub-title font-semibold text-lg text-[#5C5C5C] mb-4">National Emergency</h4>
                     <div class="service-box mb-6">
                         <h2 class="number font-bold text-3xl mb-2">999</h2>
@@ -70,7 +77,7 @@
                         <img src="./Images/emergency.png" alt="" class="w-[60px] bg-[#FFE3E2] rounded-2xl p-3.5">
                         <i class="fa-regular fa-heart"></i>
                     </div>
-                    <h3 class="font-bold text-2xl">National Emergency Number</h3>
+                    <h3 class="font-bold text-2xl">Fire Service Number</h3>
                     <h4 class="sub-title font-semibold text-lg text-[#5C5C5C] mb-4">National Emergency</h4>
                     <div class="service-box mb-6">
                         <h2 class="number font-bold text-3xl mb-2">999</h2>
@@ -86,7 +93,7 @@
                         <img src="./Images/emergency.png" alt="" class="w-[60px] bg-[#FFE3E2] rounded-2xl p-3.5">
                         <i class="fa-regular fa-heart"></i>
                     </div>
-                    <h3 class="font-bold text-2xl">National Emergency Number</h3>
+                    <h3 class="font-bold text-2xl">Ambulance Service</h3>
                     <h4 class="sub-title font-semibold text-lg text-[#5C5C5C] mb-4">National Emergency</h4>
                     <div class="service-box mb-6">
                         <h2 class="number font-bold text-3xl mb-2">999</h2>
@@ -102,7 +109,7 @@
                         <img src="./Images/emergency.png" alt="" class="w-[60px] bg-[#FFE3E2] rounded-2xl p-3.5">
                         <i class="fa-regular fa-heart"></i>
                     </div>
-                    <h3 class="font-bold text-2xl">National Emergency Number</h3>
+                    <h3 class="font-bold text-2xl">Women & Child Helpline</h3>
                     <h4 class="sub-title font-semibold text-lg text-[#5C5C5C] mb-4">National Emergency</h4>
                     <div class="service-box mb-6">
                         <h2 class="number font-bold text-3xl mb-2">999</h2>
@@ -182,10 +189,11 @@
                  <div class="content-box">
                     <header class="flex justify-between items-center">
                     <h2 class="call-history font-semibold text-xl"><i class="fa-solid fa-clock"></i> Call History</h2>
-                    <button class="flex justify-center items-center bg-[#00A63E] py-4 px-14 rounded-[40px] font-bold text-white"> Copy </button>
+                    <button id="history-delate" class="flex justify-center items-center bg-[#00A63E] py-4 px-14 rounded-[40px] font-bold text-white"> Copy </button>
                 </header>
                </div>
-               <div class="history-box p-4 bg-[#fafafa] rounded-lg flex justify-between items-center mb-4">
+               <div id="hestory-container">
+                <div class="history-box p-4 bg-[#fafafa] rounded-lg flex justify-between items-center mb-4">
                 <div class="left">
                     <h3 class="text-lg font-semibold">Fire Service Number</h3>
                     <span class="font-[400] text-lg">999</span>
@@ -205,6 +213,7 @@
                     <span class="font-[400] text-lg">999</span>
                 </div>
                 <span class="font-[400] text-lg">11:36:58 AM</span>
+               </div>
                </div>
             </div>
         </div>
