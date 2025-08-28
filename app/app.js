@@ -10,22 +10,6 @@ let contentBoxes = document.getElementsByClassName("content-box");
 
 let callHistory = document.getElementById("history-container");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Heart Counter  Section 
 
 let hearts = document.getElementsByClassName("fa-heart");
@@ -54,18 +38,21 @@ for(let box of contentBoxes){
             availableCoins = availableCoins - 20;
             document.getElementById("available-coins").innerText = availableCoins;
             }else{
-            alert("need 20 coins");
+            alert("❌ You don't have enough coins! need at least 20 coins to make a call.");
             return;
             }
             let callTitle = box.querySelector(".national").innerText;
             let callNumber = box.querySelector(".number").innerText;
-            alert( "Calling " + callTitle + " " + callNumber + " ...");
+            alert("📞 Calling " + callTitle + " " + callNumber + " ...");
             let cresteElement = document.createElement("div");
             let date = new Date().toLocaleTimeString();
+
+            // new element created for History section 
+
             cresteElement.innerHTML = `
             <div class="history-box p-4 bg-[#fafafa] rounded-lg flex justify-between items-center mb-4">
                 <div class="left">
-                    <h3 class="text-lg font-semibold">${callTitle}</h3>
+                    <h3 class="inter text-lg font-semibold">${callTitle}</h3>
                     <span class="font-[400] text-lg">${callNumber}</span>
                 </div>
                 <span class="font-[400] text-lg">${date}</span>
@@ -89,7 +76,7 @@ for(let box of contentBoxes){
         
             let callNumber = box.querySelector(".number").innerText;
             navigator.clipboard.writeText(callNumber).then(function(){
-                alert("Number has been copied : " + callNumber);
+                alert("Number Has Been Copied : " + callNumber);
             })          
         }
     })
