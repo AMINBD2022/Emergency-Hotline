@@ -10,33 +10,49 @@ for (let heart of hearts){
     })
 }
 
-// hoistory delate button 
+// hoistory delate Function 
 
 let delateHistory = document.getElementById("history-delate").addEventListener("click", function(){
-    let hestoryContainer = document.getElementById("hestory-container");
-    hestoryContainer.remove(hestoryContainer);
+    let historyContainer = document.getElementById("history-container");
+    historyContainer.innerHTML = " "; 
 })
-
-
 
 
 // Calling Function 
 
-let availeAbleCoins = parseInt(document.getElementById("available-coins").innerText);
-let callBtns = document.getElementsByClassName("call-btn");
-for (let callBtn of callBtns){
-    callBtn.addEventListener("click", function(){
-        if( availeAbleCoins >= 20){
-            availeAbleCoins = availeAbleCoins -20;
-            document.getElementById("available-coins").innerText = availeAbleCoins;
 
-        }else{
-            alert("you don't have enougth Coin to call")
-        }
-        
-        let nationals = document.getElementsByClassName("national");
-        for(let national of nationals){
-            alert(national.innerText)
+let availableCoins = parseInt(document.getElementById("available-coins").innerText)
+
+let contentBoxes = document.getElementsByClassName("content-box");
+let callHistory = document.getElementById("history-container");
+
+for(let box of contentBoxes){
+        box.addEventListener("click", function(e){
+        if(e.target.classList.contains("call-btn")){
+            if(availableCoins >= 20){
+            availableCoins = availableCoins - 20;
+            document.getElementById("available-coins").innerText = availableCoins;
+            }else{
+            alert("need 20 coins");
+            return;
+            }
+
+
+            let callTitle = box.querySelector(".national").innerText;
+            let callNumber = box.querySelector(".number").innerText;
+            alert( "Calling " + callTitle + " " + callNumber + " ...");
+            let cresteElement = document.createElement("div");
+            let date = new Date().toLocaleTimeString();
+            cresteElement.innerHTML = `
+            <div class="history-box p-4 bg-[#fafafa] rounded-lg flex justify-between items-center mb-4">
+                <div class="left">
+                    <h3 class="text-lg font-semibold">${callTitle}</h3>
+                    <span class="font-[400] text-lg">${callNumber}</span>
+                </div>
+                <span class="font-[400] text-lg">${date}</span>
+               </div>
+            ` 
+            callHistory.appendChild(cresteElement);  
         }
     })
 }
