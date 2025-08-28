@@ -2,26 +2,31 @@
 
 let availableCopy = parseInt(document.getElementById("available-copy").innerText);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Heart Counter 
-
 let heartNumberCount = parseInt(document.getElementById("heart-number-count").innerText);
+
+let availableCoins = parseInt(document.getElementById("available-coins").innerText);
+
+let contentBoxes = document.getElementsByClassName("content-box");
+
+let callHistory = document.getElementById("history-container");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Heart Counter  Section 
 
 let hearts = document.getElementsByClassName("fa-heart");
 for (let heart of hearts){
@@ -37,19 +42,14 @@ let delateHistory = document.getElementById("history-delate").addEventListener("
     let historyContainer = document.getElementById("history-container");
     historyContainer.innerHTML = " "; 
 })
-
-
+ 
 // Calling Function 
 
-
-let availableCoins = parseInt(document.getElementById("available-coins").innerText)
-
-let contentBoxes = document.getElementsByClassName("content-box");
-let callHistory = document.getElementById("history-container");
 
 for(let box of contentBoxes){
         box.addEventListener("click", function(e){
         if(e.target.classList.contains("call-btn")){
+            e.preventDefault();
             if(availableCoins >= 20){
             availableCoins = availableCoins - 20;
             document.getElementById("available-coins").innerText = availableCoins;
@@ -57,8 +57,6 @@ for(let box of contentBoxes){
             alert("need 20 coins");
             return;
             }
-
-
             let callTitle = box.querySelector(".national").innerText;
             let callNumber = box.querySelector(".number").innerText;
             alert( "Calling " + callTitle + " " + callNumber + " ...");
@@ -85,11 +83,14 @@ for(let box of contentBoxes){
 for(let box of contentBoxes){
         box.addEventListener("click", function(e){
         if(e.target.classList.contains("copy-button")){
+            e.preventDefault();
             availableCopy = availableCopy + 1;
             document.getElementById("available-copy").innerText = availableCopy;
         
             let callNumber = box.querySelector(".number").innerText;
-            alert( " number has been Copied : " + callNumber);
+            navigator.clipboard.writeText(callNumber).then(function(){
+                alert("Number has been copied : " + callNumber);
+            })          
         }
     })
 }
