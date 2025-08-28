@@ -1,3 +1,24 @@
+// Shared Content 
+
+let availableCopy = parseInt(document.getElementById("available-copy").innerText);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Heart Counter 
 
 let heartNumberCount = parseInt(document.getElementById("heart-number-count").innerText);
@@ -53,6 +74,22 @@ for(let box of contentBoxes){
                </div>
             ` 
             callHistory.appendChild(cresteElement);  
+        }
+    })
+}
+
+
+// Copy Button section 
+
+
+for(let box of contentBoxes){
+        box.addEventListener("click", function(e){
+        if(e.target.classList.contains("copy-button")){
+            availableCopy = availableCopy + 1;
+            document.getElementById("available-copy").innerText = availableCopy;
+        
+            let callNumber = box.querySelector(".number").innerText;
+            alert( " number has been Copied : " + callNumber);
         }
     })
 }
